@@ -164,7 +164,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                             <NavigationMenuLink
                               href={item.href}
                               className={cn(
-                                "group/nav flex items-center text-2xl font-semibold tracking-tight transition-all p-0 hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent",
+                                "group/nav flex items-center text-2xl font-semibold tracking-tight transition-all p-0 hover:bg-transparent focus:bg-transparent data-active:bg-transparent data-[state=open]:bg-transparent",
                                 item.isActive
                                   ? "text-primary"
                                   : "text-muted-foreground hover:text-foreground hover:translate-x-2",
