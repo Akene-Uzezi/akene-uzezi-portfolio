@@ -1,15 +1,27 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+  SheetClose,
+} from "@/components/ui/sheet";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react";
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from "lucide-react";
 import Logo from "@/assets/logo/logo";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { a } from "motion/react-client";
 
 export type NavigationSection = {
   title: string;
@@ -23,14 +35,22 @@ type HeaderProps = {
 };
 
 const CollaborateButton = ({ className }: { className?: string }) => (
-  <Button className={cn("relative text-sm font-medium rounded-full h-10 p-1 ps-4 pe-12 group transition-all duration-500 hover:ps-12 hover:pe-4 w-fit overflow-hidden", className, "cursor-pointer")}>
-    <span className="relative z-10 transition-all duration-500">
-      Let's Collaborate
-    </span>
-    <span className="absolute right-1 w-8 h-8 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-36px)] group-hover:rotate-45">
-      <ArrowUpRight size={16} />
-    </span>
-  </Button>
+  <a href="#">
+    <Button
+      className={cn(
+        "relative text-sm font-medium rounded-full h-10 p-1 ps-4 pe-12 group transition-all duration-500 hover:ps-12 hover:pe-4 w-fit overflow-hidden",
+        className,
+        "cursor-pointer",
+      )}
+    >
+      <span className="relative z-10 transition-all duration-500">
+        View Projects
+      </span>
+      <span className="absolute right-1 w-8 h-8 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-36px)] group-hover:rotate-45">
+        <ArrowUpRight size={16} />
+      </span>
+    </Button>
+  </a>
 );
 
 const Header = ({ navigationData, className }: HeaderProps) => {
@@ -89,7 +109,10 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                 <NavigationMenuItem key={navItem.title}>
                   <NavigationMenuLink
                     href={navItem.href}
-                    className={cn("px-2 lg:px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground hover:bg-background outline outline-transparent hover:outline-border hover:shadow-xs transition tracking-normal", navItem.isActive ? "bg-background text-foreground" : "")}
+                    className={cn(
+                      "px-2 lg:px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground hover:bg-background outline outline-transparent hover:outline-border hover:shadow-xs transition tracking-normal",
+                      navItem.isActive ? "bg-background text-foreground" : "",
+                    )}
                   >
                     {navItem.title}
                   </NavigationMenuLink>
@@ -107,10 +130,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger id="mobile-menu-trigger">
                 <span className="rounded-full border border-border p-2 block">
-                  <Menu
-                    width={20}
-                    height={20}
-                  />
+                  <Menu width={20} height={20} />
                   <span className="sr-only">Menu</span>
                 </span>
               </SheetTrigger>
