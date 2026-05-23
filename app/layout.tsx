@@ -13,9 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Akene Uzezi | Software Engineer",
+  title: "Akene Uzezi | Full-Stack Software Engineer",
   description:
     "Portfolio of Akene Uzezi, a full-stack engineer building robust backend systems with Go and Node.js, containerized infrastructure, and fluid interactive frontends.",
+  openGraph: {
+    title: "Akene Uzezi | Full-Stack Software Engineer",
+    description:
+      "Portfolio of Akene Uzezi, a full-stack engineer building robust backend systems with Go and Node.js, containerized infrastructure, and fluid interactive frontends.",
+    siteName: "Akene Uzezi Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
