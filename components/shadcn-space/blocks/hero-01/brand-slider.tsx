@@ -33,13 +33,15 @@ function BrandSlider({ brandList }: { brandList: BrandList[] }) {
               <div className="py-4">
                 <Marquee pauseOnHover className="[--duration:20s] p-0">
                   {brandList.map((brand, index) => (
-                    <div key={index} className="flex gap-1">
+                    /* 1. Added items-center and mx-8 to separate individual pairs in the slider */
+                    <div key={index} className="flex items-center gap-2 mx-8">
                       <img
                         src={brand.image}
                         alt={brand.name}
-                        className="w-36 h-8 mr-6 lg:mr-20 dark:hidden"
+                        /* 2. Removed mr-6 lg:mr-20 so gap-2 controls the internal spacing */
+                        className="w-auto h-8 dark:hidden"
                       />
-                      <p>{brand.name}</p>
+                      <p className="text-sm font-medium">{brand.name}</p>
                     </div>
                   ))}
                 </Marquee>
