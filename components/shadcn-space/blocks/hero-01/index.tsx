@@ -47,37 +47,105 @@ export default function AgencyHeroSection() {
 
   const brandList: BrandList[] = [
     {
-      image: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-1.svg",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
       lightimg:
-        "https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-1.svg",
-      name: "Brand 1",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+      name: "HTML",
     },
     {
-      image: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-2.svg",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
       lightimg:
-        "https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-2.svg",
-      name: "Brand 2",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+      name: "CSS",
     },
     {
-      image: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-3.svg",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
       lightimg:
-        "https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-3.svg",
-      name: "Brand 3",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+      name: "JavaScript",
     },
     {
-      image: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-4.svg",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
       lightimg:
-        "https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-4.svg",
-      name: "Brand 4",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+      name: "TypeScript",
     },
     {
-      image: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-5.svg",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
       lightimg:
-        "https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-5.svg",
-      name: "Brand 5",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+      name: "React",
+    },
+    {
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+      lightimg:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+      name: "Next.js",
+    },
+    {
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+      lightimg:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+      name: "Tailwind css",
+    },
+    {
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
+      lightimg:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
+      name: "Go(Golang)",
+    },
+    {
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+      lightimg:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+      name: "Node.js",
+    },
+    {
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+      lightimg:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+      name: "Python",
+    },
+    {
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+      lightimg:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+      name: "PostgreSQL",
+    },
+    {
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+      lightimg:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+      name: "MongoDB",
+    },
+    {
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+      lightimg:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+      name: "Git",
+    },
+    {
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+      lightimg:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+      name: "Docker",
     },
   ];
-
+  // I've tried reducing the gap between the brand image and the name using flex and gap-1 but that didn't work how do i reduce the space between the brand and it's name
   return (
     <div className="relative">
       <Header navigationData={navigationData} />
