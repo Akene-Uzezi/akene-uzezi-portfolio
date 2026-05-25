@@ -145,7 +145,6 @@ export default function AgencyHeroSection() {
       name: "Docker",
     },
   ];
-  // I've tried reducing the gap between the brand image and the name using flex and gap-1 but that didn't work how do i reduce the space between the brand and it's name
   return (
     <div className="relative">
       <Header navigationData={navigationData} />
