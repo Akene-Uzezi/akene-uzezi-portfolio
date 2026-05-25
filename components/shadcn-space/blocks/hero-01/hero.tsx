@@ -29,7 +29,7 @@ function HeroSection({ avatarList }: HeroSectionProps) {
         <div className="relative w-full pt-0 md:pt-20 pb-6 md:pb-10 before:absolute before:w-full before:h-full before:bg-linear-to-r before:from-sky-100 before:via-white before:to-amber-100 before:rounded-full before:top-24 before:blur-3xl before:-z-10 dark:before:from-slate-800 dark:before:via-black dark:before:to-stone-700 dark:before:rounded-full dark:before:blur-3xl dark:before:-z-10">
           <div className="container mx-auto relative z-10 px-4">
             <div className="flex flex-col lg:flex-row max-w-6xl mx-auto gap-8 lg:gap-12 items-center justify-between">
-              <ImageCard />
+              <ImageCard src="/Placeholder.png" alt="Placeholder" />
               <div className="relative flex flex-col text-center lg:text-left items-center lg:items-start sm:gap-6 gap-4 max-w-2xl">
                 <motion.h1
                   initial={{ opacity: 0, y: 32 }}

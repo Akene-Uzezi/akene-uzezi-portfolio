@@ -189,29 +189,6 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                       <CollaborateButton />
                     </div>
                   </div>
-
-                  <div className="mt-auto flex flex-col gap-4">
-                    <div className="flex gap-3">
-                      {[
-                        "lucide:dribbble",
-                        "lucide:instagram",
-                        "lucide:twitter",
-                        "lucide:linkedin",
-                      ].map((icon) => (
-                        <a
-                          key={icon}
-                          href="#"
-                          className="flex items-center justify-center rounded-full outline outline-border hover:bg-muted transition p-3 shadow-xs"
-                        >
-                          <Icon icon={icon} width={16} height={16} />
-                        </a>
-                      ))}
-                    </div>
-
-                    <p className="text-sm text-muted-foreground">
-                      © 2026 Shadcn Space
-                    </p>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>

@@ -1,18 +1,12 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardFooter } from "@/components/ui/card";
 import { motion } from "motion/react";
-
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 interface ImageCardProp {
   src: string;
+  alt: string;
 }
 
-export function ImageCard() {
+export function ImageCard({ src, alt }: ImageCardProp) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -32 }}
@@ -21,29 +15,24 @@ export function ImageCard() {
       className="w-full lg:w-100 shrink-0"
     >
       <Card className="max-w-87.5 overflow-hidden">
-        {/* 1. Image container at the top */}
         <div className="relative aspect-video w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
-            alt="Project Preview"
+            src={src}
+            alt={alt}
             className="h-full w-full object-cover transition-all hover:scale-105"
           />
         </div>
-
-        {/* 2. Text and actions underneath */}
-        <CardHeader>
-          <CardTitle>Portfolio Project</CardTitle>
-          <CardDescription>
-            Built with Next.js, Go, and Tailwind.
-          </CardDescription>
-        </CardHeader>
-
-        <CardContent>
-          <p className="text-sm text-muted-foreground">
-            A sleek, high-performance web application designed to showcase
-            responsive layouts.
-          </p>
-        </CardContent>
+        <CardFooter className="gap-3">
+          <a href="https://github.com/Akene-Uzezi" target="blank">
+            <BsGithub size={24} />
+          </a>
+          <a
+            href="https://linkedin.com/in/uzezi-akene-7023a8374"
+            target="blank"
+          >
+            <BsLinkedin size={24} />
+          </a>
+        </CardFooter>
       </Card>
     </motion.div>
   );
