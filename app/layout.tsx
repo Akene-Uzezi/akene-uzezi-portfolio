@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Akene Uzezi | Full-Stack Software Engineer",
     description:
-      "Full-stack engineer dedicated to building fast, cloud-ready architectures.",
-    url: "https://akene-uzezi.vercel.app", // Replace with your actual live URL
+      "Full-stack engineer dedicated to building fast, cloud-ready architectures and immersive web experiences.", // <- MAKE SURE THIS IS HERE
+    url: "https://akene-uzezi.vercel.app",
     siteName: "Akene Uzezi Portfolio",
     type: "website",
   },
