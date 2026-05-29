@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "commit": "sh commit.sh"
+    "lint": "eslint"
   },
   "dependencies": {
     "@iconify/react": "^6.0.2",
