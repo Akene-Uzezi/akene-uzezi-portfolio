@@ -23,8 +23,8 @@ export default function ProjectsSection() {
         "Engineered resilient web scraping fallbacks to seamlessly handle dynamic, JavaScript-heavy web pages.",
         "Optimized processing pipelines for low-latency delivery of tokenized summary payloads.",
       ],
-      github: "https://github.com/Akene-Uzezi",
-      live: "#",
+      github: "https://github.com/Akene-Uzezi/summ-it-up-backend",
+      live: "https://summ-it-up.vercel.app",
     },
     {
       title: "Enterprise Document Management System",
@@ -36,7 +36,7 @@ export default function ProjectsSection() {
         "Implemented high-performance, encrypted file-sharing functionalities across the platform.",
         "Collaborated in a team environment to deliver comprehensive API documentation and system modules.",
       ],
-      github: "https://github.com/Akene-Uzezi",
+      github: "https://github.com/Akene-Uzezi/Document-Repository-React",
       live: "#",
     },
   ];
