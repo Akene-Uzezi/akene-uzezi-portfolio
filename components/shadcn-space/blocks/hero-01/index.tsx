@@ -26,7 +26,7 @@ export default function AgencyHeroSection() {
     },
     {
       title: "About",
-      href: "#",
+      href: "#about",
     },
     {
       title: "Projects",

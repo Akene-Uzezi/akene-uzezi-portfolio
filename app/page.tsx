@@ -1,9 +1,17 @@
 import AgencyHeroSection from "@/components/shadcn-space/blocks/hero-01";
+import AboutSection from "@/components/AboutSection";
+import { brandList } from "@/components/brands/brandlist";
+import BrandSlider from "@/components/shadcn-space/blocks/hero-01/brand-slider";
+import ProjectsSection from "@/components/ProjectsSection";
+import ExperienceSection from "@/components/ExperienceSection";
 export default function Home() {
   return (
     <>
       <AgencyHeroSection />
-      <div>Hello</div>
+      <AboutSection />
+      <BrandSlider brandList={brandList} />
+      <ProjectsSection />
+      <ExperienceSection />
     </>
   );
 }

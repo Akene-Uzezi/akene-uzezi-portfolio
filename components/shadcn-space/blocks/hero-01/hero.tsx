@@ -1,11 +1,7 @@
 "use client";
 
 import { Instrument_Serif } from "next/font/google";
-import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
-// Import your Shadcn Card components
-import { Card } from "@/components/ui/card";
 import { ImageCard } from "@/components/ImageCard";
 
 const instrumentSerif = Instrument_Serif({
