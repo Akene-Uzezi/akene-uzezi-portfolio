@@ -58,7 +58,7 @@ export default function ExperienceSection() {
               className="scroll-reveal opacity-0 translate-y-4 transition-all duration-700 ease-out relative pl-6 border-l border-slate-200 dark:border-slate-800 space-y-4"
             >
               {/* Timeline Bullet Node */}
-              <div className="absolute -left-[4.5px] top-2 h-2 w-2 rounded-full bg-slate-400 dark:bg-slate-600 border border-white dark:border-slate-950" />
+              <div className="absolute left-[4.5px] top-2 h-2 w-2 rounded-full bg-slate-400 dark:bg-slate-600 border border-white dark:border-slate-950" />
 
               {/* Header Info */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
@@ -80,7 +80,7 @@ export default function ExperienceSection() {
                 {exp.points.map((point, idx) => (
                   <li
                     key={idx}
-                    className="relative pl-5 before:absolute before:left-0 before:top-[10px] before:h-1.5 before:w-1.5 before:rounded-full before:bg-slate-300 dark:before:bg-slate-700"
+                    className="relative pl-5 before:absolute before:left-0 before:top-2.5 before:h-1.5 before:w-1.5 before:rounded-full before:bg-slate-300 dark:before:bg-slate-700"
                   >
                     {point}
                   </li>
