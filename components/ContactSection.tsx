@@ -28,6 +28,7 @@ export default function ContactSection() {
 
   return (
     <section
+      id="contact"
       ref={sectionRef}
       className="w-full max-w-5xl mx-auto px-6 py-16 md:py-24 text-slate-900 dark:text-slate-50 border-t border-slate-200 dark:border-slate-800"
     >

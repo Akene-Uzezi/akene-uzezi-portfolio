@@ -10,14 +10,14 @@ export const navigationData: NavigationSection[] = [
   },
   {
     title: "Projects",
-    href: "#",
+    href: "#projects",
   },
   {
     title: "Experience",
-    href: "#",
+    href: "#experience",
   },
   {
     title: "Contact",
-    href: "#",
+    href: "#contact",
   },
 ];
