@@ -17,14 +17,27 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Akene Uzezi | Full-Stack Software Engineer",
   description:
-    "Portfolio of Akene Uzezi, a full-stack engineer building robust backend systems with Go and Node.js, containerized infrastructure, and fluid interactive frontends.",
+    "Full-stack engineer dedicated to building fast, cloud-ready architectures and immersive web experiences. Focused on precision, performance, and clean execution.",
+  keywords: [
+    "Akene Uzezi",
+    "Software Engineer",
+    "Backend Engineer",
+    "Node.js",
+    "Go",
+    "Developer Portfolio",
+    "Nigeria",
+  ],
+  authors: [{ name: "Akene Uzezi" }],
   openGraph: {
     title: "Akene Uzezi | Full-Stack Software Engineer",
     description:
-      "Portfolio of Akene Uzezi, a full-stack engineer building robust backend systems with Go and Node.js, containerized infrastructure, and fluid interactive frontends.",
+      "Full-stack engineer dedicated to building fast, cloud-ready architectures.",
+    url: "https://akene-uzezi.vercel.app", // Replace with your actual live URL
     siteName: "Akene Uzezi Portfolio",
-    locale: "en_US",
     type: "website",
+  },
+  verification: {
+    google: "_Ezq8_6yTUBQVQdF60KXs9BwT3a-iwVCkqARC42pmXU",
   },
 };
 
