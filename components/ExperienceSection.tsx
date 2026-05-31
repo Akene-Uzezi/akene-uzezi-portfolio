@@ -6,7 +6,7 @@ export default function ExperienceSection() {
   const experiences = [
     {
       role: "Software Engineer Intern",
-      company: "Health Village",
+      company: "Redeemer's Health Village",
       period: "Present",
       points: [
         "Collaborated in a cross-functional engineering team to architect and deploy a secure internal Document Management System.",

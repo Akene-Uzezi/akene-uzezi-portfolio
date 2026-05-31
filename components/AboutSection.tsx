@@ -18,12 +18,8 @@ export default function AboutSection() {
           <p>
             I am a Full-Stack Software Engineer focused on building scalable
             backend architectures, optimized APIs, and seamless user
-            experiences. Currently pursuing my Computer Science degree with a{" "}
-            <span className="font-semibold text-slate-900 dark:text-white">
-              4.41 GPA
-            </span>
-            , I bridge the gap between complex server-side logic and clean,
-            high-performance client interfaces.
+            experiences. I bridge the gap between complex server-side logic and
+            clean, high-performance client interfaces.
           </p>
           <p>
             My development approach is deeply rooted in engineering craft: I
