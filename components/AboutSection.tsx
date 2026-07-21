@@ -1,20 +1,27 @@
+import { Badge } from "@/components/ui/badge";
+
 export default function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full max-w-5xl mx-auto px-6 py-16 md:py-24 text-slate-900 dark:text-slate-50"
+      className="w-full max-w-5xl mx-auto px-6 py-16 md:py-28"
     >
-      {/* Grid Layout: Clean, editorial style matching your header design */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {/* Left Column: Section Title */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 items-start">
         <div className="md:col-span-1">
-          <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-500 dark:text-slate-400 md:sticky md:top-24">
-            01 / ABOUT ME
-          </h2>
+          <div className="md:sticky md:top-28">
+            <Badge
+              variant="outline"
+              className="rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase border-border/60 text-muted-foreground mb-4"
+            >
+              01 — About Me
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+              About me
+            </h2>
+          </div>
         </div>
 
-        {/* Right Column: Bio Content */}
-        <div className="md:col-span-2 space-y-6 text-lg leading-relaxed text-slate-700 dark:text-slate-300 font-normal">
+        <div className="md:col-span-2 space-y-6 text-base md:text-lg leading-relaxed text-muted-foreground font-normal">
           <p>
             I am a Full-Stack Software Engineer focused on building scalable
             backend architectures, optimized APIs, and seamless user
@@ -28,9 +35,9 @@ export default function AboutSection() {
             defined by its resilience, security, and speed.
           </p>
           <p>
-            When I'm not writing code, I'm usually sharpening my technical
-            skills, studying system design, or diving into complex interactive
-            web experiences.
+            When I&apos;m not writing code, I&apos;m usually sharpening my
+            technical skills, studying system design, or diving into complex
+            interactive web experiences.
           </p>
         </div>
       </div>

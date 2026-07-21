@@ -41,7 +41,6 @@ export default function ProjectsSection() {
     },
   ];
 
-  // Native Intersection Observer for Scroll Effects
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -67,83 +66,93 @@ export default function ProjectsSection() {
     <section
       id="projects"
       ref={sectionRef}
-      className="w-full max-w-5xl mx-auto px-6 py-16 md:py-24 text-slate-900 dark:text-slate-50 border-t border-slate-200 dark:border-slate-800"
+      className="w-full max-w-5xl mx-auto px-6 py-16 md:py-28"
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {/* Left Column: Section Title */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 items-start mb-12">
         <div className="md:col-span-1">
-          <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-500 dark:text-slate-400 md:sticky md:top-24">
-            02 / SELECTED PROJECTS
-          </h2>
+          <div className="md:sticky md:top-28">
+            <Badge
+              variant="outline"
+              className="rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase border-border/60 text-muted-foreground mb-4"
+            >
+              02 — Selected Projects
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+              Selected<br />Projects
+            </h2>
+          </div>
         </div>
 
-        {/* Right Column: Projects Container */}
-        <div className="md:col-span-2 space-y-8">
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="scroll-reveal opacity-0 translate-y-4 transition-all duration-700 ease-out bg-slate-50/40 dark:bg-slate-900/10 border-slate-200 dark:border-slate-800/80 rounded-xl p-6 md:p-8 group shadow-sm hover:shadow-md dark:hover:bg-slate-900/30 hover:border-slate-300 dark:hover:border-slate-700"
-            >
-              <CardHeader className="p-0 pb-4">
-                <div className="flex items-center justify-between gap-4">
-                  <CardTitle className="text-xl font-medium tracking-tight group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors">
-                    {project.title}
-                  </CardTitle>
-                  <div className="flex items-center space-x-4 text-slate-400 dark:text-slate-500 shrink-0">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
-                    >
-                      <BsGithub className="h-5 w-5" />
-                    </a>
-                    {project.live !== "#" && (
+        <div className="md:col-span-2">
+          <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-lg">
+            A curated selection of projects showcasing my expertise in backend
+            architecture, system design, and full-stack development.
+          </p>
+          <div className="space-y-6">
+            {projects.map((project, index) => (
+              <Card
+                key={index}
+                className="scroll-reveal opacity-0 translate-y-4 transition-all duration-700 ease-out bg-card border-border/80 rounded-2xl p-0 group shadow-sm hover:shadow-md hover:border-foreground/10 transition-colors"
+              >
+                <CardHeader className="p-6 pb-4">
+                  <div className="flex items-center justify-between gap-4">
+                    <CardTitle className="text-xl font-medium tracking-tight text-foreground group-hover:text-primary transition-colors">
+                      {project.title}
+                    </CardTitle>
+                    <div className="flex items-center gap-3 text-muted-foreground shrink-0">
                       <a
-                        href={project.live}
+                        href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                        className="hover:text-foreground transition-colors"
                       >
-                        <ExternalLink className="h-5 w-5" />
+                        <BsGithub className="h-5 w-5" />
                       </a>
-                    )}
+                      {project.live !== "#" && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-foreground transition-colors"
+                        >
+                          <ExternalLink className="h-5 w-5" />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
-                <CardDescription className="text-slate-600 dark:text-slate-400 text-base mt-2 leading-relaxed">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
+                  <CardDescription className="text-muted-foreground text-base mt-2.5 leading-relaxed">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
 
-              <CardContent className="p-0 space-y-6">
-                {/* Fixed Bullet Padding Layout */}
-                <ul className="list-none space-y-3 text-sm text-slate-600 dark:text-slate-400 font-normal">
-                  {project.details.map((detail, idx) => (
-                    <li
-                      key={idx}
-                      className="leading-relaxed flex items-start gap-2"
-                    >
-                      <span className="text-slate-400 dark:text-slate-600 mt-1.5 shrink-0 h-1.5 w-1.5 rounded-full bg-current" />
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
+                <CardContent className="p-6 pt-0 space-y-6">
+                  <ul className="space-y-3 text-sm text-muted-foreground font-normal">
+                    {project.details.map((detail, idx) => (
+                      <li
+                        key={idx}
+                        className="leading-relaxed flex items-start gap-3"
+                      >
+                        <span className="mt-1.5 shrink-0 h-1.5 w-1.5 rounded-full bg-primary/60" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                {/* Badges Layout */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tags.map((tag, idx) => (
-                    <Badge
-                      key={idx}
-                      variant="secondary"
-                      className="rounded-md bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-mono text-xs border border-slate-200/60 dark:border-slate-800 px-2.5 py-0.5"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.tags.map((tag, idx) => (
+                      <Badge
+                        key={idx}
+                        variant="secondary"
+                        className="rounded-lg bg-muted text-muted-foreground font-mono text-xs border border-border/60 px-2.5 py-0.5 hover:bg-muted/80"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

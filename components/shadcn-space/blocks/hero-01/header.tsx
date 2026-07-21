@@ -14,14 +14,12 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Icon } from "@iconify/react";
 import { Menu, X } from "lucide-react";
-import Logo from "@/assets/logo/logo";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
-import { a } from "motion/react-client";
 
 export type NavigationSection = {
   title: string;
@@ -65,10 +63,16 @@ const Header = ({ navigationData, className }: HeaderProps) => {
     if (window.innerWidth >= 768) setIsOpen(false);
   }, []);
 
+  const scrollToSection = useCallback((href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
@@ -90,28 +94,37 @@ const Header = ({ navigationData, className }: HeaderProps) => {
         className={cn(
           "w-full max-w-6xl flex items-center h-fit justify-between gap-3.5 lg:gap-6 transition-all duration-500",
           sticky
-            ? "p-2.5 bg-background/60 backdrop-blur-lg border border-border/40 shadow-2xl shadow-primary/5 rounded-full"
+            ? "p-2.5 bg-background/80 backdrop-blur-xl border border-border/60 shadow-lg shadow-black/5 rounded-full"
             : "bg-transparent border-transparent",
         )}
       >
-        {/* Logo */}
         <div>
-          <a href="#">
-            <Logo className="gap-3" />
+          <a href="#" className="flex items-center gap-2">
+            <Badge
+              variant="outline"
+              className="rounded-full px-3 py-1 text-xs font-semibold tracking-widest uppercase border-primary/30 text-primary"
+            >
+              Akene Uzezi
+            </Badge>
           </a>
         </div>
 
-        {/* Desktop Navigation */}
         <div>
-          <NavigationMenu className="max-lg:hidden bg-muted p-0.5 rounded-full">
+          <NavigationMenu className="max-lg:hidden bg-muted/60 p-0.5 rounded-full border border-border/50">
             <NavigationMenuList className="flex gap-0">
               {navigationData.map((navItem) => (
                 <NavigationMenuItem key={navItem.title}>
                   <NavigationMenuLink
                     href={navItem.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(navItem.href);
+                    }}
                     className={cn(
-                      "px-2 lg:px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground hover:bg-background outline outline-transparent hover:outline-border hover:shadow-xs transition tracking-normal",
-                      navItem.isActive ? "bg-background text-foreground" : "",
+                      "px-3 lg:px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground hover:bg-background outline outline-transparent hover:outline-border hover:shadow-sm transition tracking-normal",
+                      navItem.isActive
+                        ? "bg-background text-foreground shadow-sm"
+                        : "",
                     )}
                   >
                     {navItem.title}
@@ -122,14 +135,13 @@ const Header = ({ navigationData, className }: HeaderProps) => {
           </NavigationMenu>
         </div>
 
-        {/* Desktop CTA */}
-        <div className="flex gap-4">
+        <div className="flex gap-3">
           <CollaborateButton className="hidden lg:flex" />
 
           <div className="lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger id="mobile-menu-trigger">
-                <span className="rounded-full border border-border p-2 block">
+                <span className="rounded-full border border-border p-2 block hover:bg-muted transition-colors">
                   <Menu width={20} height={20} />
                   <span className="sr-only">Menu</span>
                 </span>
@@ -142,16 +154,21 @@ const Header = ({ navigationData, className }: HeaderProps) => {
               >
                 <div className="flex items-center justify-between p-6">
                   <a href="#">
-                    <Logo className="gap-2" />
+                    <Badge
+                      variant="outline"
+                      className="rounded-full px-3 py-1 text-xs font-semibold tracking-widest uppercase border-primary/30 text-primary"
+                    >
+                      Akene Uzezi
+                    </Badge>
                   </a>
                   <SheetClose id="mobile-menu-close">
-                    <span className="rounded-full border border-border p-2.5 block">
+                    <span className="rounded-full border border-border p-2.5 block hover:bg-muted transition-colors">
                       <X width={16} height={16} />
                     </span>
                   </SheetClose>
                 </div>
 
-                <div className="flex flex-col gap-12 px-6 pb-6 overflow-y-auto">
+                <div className="flex flex-col gap-10 px-6 pb-6 overflow-y-auto">
                   <div className="flex flex-col gap-8">
                     <SheetTitle className="sr-only">Menu</SheetTitle>
                     <NavigationMenu
@@ -163,10 +180,15 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                           <NavigationMenuItem key={item.title}>
                             <NavigationMenuLink
                               href={item.href}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection(item.href);
+                                setIsOpen(false);
+                              }}
                               className={cn(
                                 "group/nav flex items-center text-2xl font-semibold tracking-tight transition-all p-0 hover:bg-transparent focus:bg-transparent data-active:bg-transparent data-[state=open]:bg-transparent",
                                 item.isActive
-                                  ? "text-primary"
+                                  ? "text-foreground"
                                   : "text-muted-foreground hover:text-foreground hover:translate-x-2",
                               )}
                             >
@@ -174,8 +196,8 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                                 className={cn(
                                   "h-0.5 bg-primary transition-all duration-300 overflow-hidden",
                                   item.isActive
-                                    ? "w-4 mr-2 opacity-100"
-                                    : "w-0 opacity-0 group-hover/nav:w-4 group-hover/nav:mr-2 group-hover/nav:opacity-100",
+                                    ? "w-4 mr-3 opacity-100"
+                                    : "w-0 opacity-0 group-hover/nav:w-4 group-hover/nav:mr-3 group-hover/nav:opacity-100",
                                 )}
                               />
                               {item.title}

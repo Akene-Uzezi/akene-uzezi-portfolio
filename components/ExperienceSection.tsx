@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
 
 export default function ExperienceSection() {
   const experiences = [
     {
       role: "Software Engineer Intern",
-      company: "Redeemer's Health Village",
+      company: "Redeemer&apos;s Health Village",
       period: "Present",
       points: [
         "Collaborated in a cross-functional engineering team to architect and deploy a secure internal Document Management System.",
@@ -41,58 +41,73 @@ export default function ExperienceSection() {
     <section
       id="experience"
       ref={sectionRef}
-      className="w-full max-w-5xl mx-auto px-6 py-16 md:py-24 text-slate-900 dark:text-slate-50 border-t border-slate-200 dark:border-slate-800"
+      className="w-full max-w-5xl mx-auto px-6 py-16 md:py-28"
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {/* Left Column: Section Title */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 items-start mb-12">
         <div className="md:col-span-1">
-          <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-500 dark:text-slate-400 md:sticky md:top-24">
-            03 / EXPERIENCE
-          </h2>
+          <div className="md:sticky md:top-28">
+            <Badge
+              variant="outline"
+              className="rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase border-border/60 text-muted-foreground mb-4"
+            >
+              03 — Experience
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+              Work<br />experience
+            </h2>
+          </div>
         </div>
 
-        {/* Right Column: Timeline Content */}
-        <div className="md:col-span-2 space-y-8">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="scroll-reveal opacity-0 translate-y-4 transition-all duration-700 ease-out relative pl-6 border-l border-slate-200 dark:border-slate-800 space-y-4"
-            >
-              {/* Timeline Bullet Node */}
-              <div className="absolute left-[4.5px] top-2 h-2 w-2 rounded-full bg-slate-400 dark:bg-slate-600 border border-white dark:border-slate-950" />
+        <div className="md:col-span-2">
+          <p className="text-base text-muted-foreground leading-relaxed mb-10 max-w-lg">
+            Building production-grade systems and contributing to meaningful
+            engineering teams.
+          </p>
 
-              {/* Header Info */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                <div>
-                  <h3 className="text-lg font-medium tracking-tight">
-                    {exp.role}
-                  </h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 font-normal">
-                    {exp.company}
-                  </p>
+          <div className="space-y-0">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className="scroll-reveal opacity-0 translate-y-4 transition-all duration-700 ease-out relative"
+              >
+                <div className="flex gap-6">
+                  <div className="flex flex-col items-center">
+                    <div className="h-3 w-3 rounded-full bg-primary/80 mt-1.5 shrink-0 ring-4 ring-background" />
+                    {index < experiences.length - 1 && (
+                      <div className="w-px flex-1 bg-border/80 my-3" />
+                    )}
+                  </div>
+
+                  <div className="flex-1 pb-10">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
+                      <div>
+                        <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                          {exp.role}
+                        </h3>
+                        <p className="text-sm text-muted-foreground font-normal mt-0.5">
+                          {exp.company}
+                        </p>
+                      </div>
+                      <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase sm:text-right shrink-0">
+                        {exp.period}
+                      </span>
+                    </div>
+
+                    <ul className="space-y-3 text-sm text-muted-foreground leading-relaxed font-normal">
+                      {exp.points.map((point, idx) => (
+                        <li
+                          key={idx}
+                          className="relative pl-5 before:absolute before:left-0 before:top-2.5 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary/50"
+                        >
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <span className="text-xs font-mono tracking-wider text-slate-400 dark:text-slate-500 uppercase sm:text-right">
-                  {exp.period}
-                </span>
               </div>
-
-              {/* Experience Descriptions */}
-              <ul className="space-y-3 text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
-                {exp.points.map((point, idx) => (
-                  <li
-                    key={idx}
-                    className="relative pl-5 before:absolute before:left-0 before:top-2.5 before:h-1.5 before:w-1.5 before:rounded-full before:bg-slate-300 dark:before:bg-slate-700"
-                  >
-                    {point}
-                  </li>
-                ))}
-              </ul>
-
-              {index < experiences.length - 1 && (
-                <Separator className="my-8 bg-slate-200 dark:bg-slate-800" />
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
