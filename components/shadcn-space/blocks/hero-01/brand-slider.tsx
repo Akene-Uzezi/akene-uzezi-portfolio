@@ -40,7 +40,7 @@ function BrandSlider({ brandList }: { brandList: BrandList[] }) {
                       <img
                         src={brand.image}
                         alt={brand.name}
-                        className="w-auto h-8 dark:hidden"
+                        className="w-auto h-8 dark:invert dark:brightness-200"
                       />
                       <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
                         {brand.name}

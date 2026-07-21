@@ -20,6 +20,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export type NavigationSection = {
   title: string;
@@ -137,6 +138,9 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
         <div className="flex gap-3">
           <CollaborateButton className="hidden lg:flex" />
+          <div className="hidden lg:flex items-center">
+            <ThemeToggle />
+          </div>
 
           <div className="lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -209,6 +213,9 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
                     <div className="w-fit">
                       <CollaborateButton />
+                    </div>
+                    <div className="w-fit">
+                      <ThemeToggle />
                     </div>
                   </div>
                 </div>

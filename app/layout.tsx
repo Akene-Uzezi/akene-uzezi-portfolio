@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Instrument_Serif } from "next/font/google";
 import Header from "@/components/shadcn-space/blocks/hero-01/header";
 import { navigationData } from "@/types/types";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -57,11 +58,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <Header navigationData={navigationData} />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header navigationData={navigationData} />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
