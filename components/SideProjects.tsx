@@ -64,7 +64,7 @@ export default function SideProjectsSection() {
 
   return (
     <section
-      id="projects"
+      id="sideprojects"
       ref={sectionRef}
       className="w-full max-w-5xl mx-auto px-6 py-16 md:py-28"
     >
@@ -75,10 +75,10 @@ export default function SideProjectsSection() {
               variant="outline"
               className="rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase border-border/60 text-muted-foreground mb-4"
             >
-              02 — Selected Projects
+              03 — Side Projects
             </Badge>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
-              Selected<br />Projects
+              Side<br />Projects
             </h2>
           </div>
         </div>

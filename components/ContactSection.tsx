@@ -42,7 +42,7 @@ export default function ContactSection() {
               variant="outline"
               className="rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase border-border/60 text-muted-foreground mb-4"
             >
-              04 — Contact
+              05 — Contact
             </Badge>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
               Get in<br />touch
