@@ -85,8 +85,7 @@ export default function SideProjectsSection() {
 
         <div className="md:col-span-2">
           <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-lg">
-            A curated selection of projects showcasing my expertise in backend
-            architecture, system design, and full-stack development.
+            Work-in-progress builds and side experiments where I test fresh ideas, refine system design, and continuously iterate.
           </p>
           <div className="space-y-6">
             {projects.map((project, index) => (
