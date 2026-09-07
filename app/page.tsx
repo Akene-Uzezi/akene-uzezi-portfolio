@@ -5,6 +5,7 @@ import BrandSlider from "@/components/shadcn-space/blocks/hero-01/brand-slider";
 import ProjectsSection from "@/components/ProjectsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
+import SideProjectsSection from "@/components/SideProjects";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <AboutSection />
       <BrandSlider brandList={brandList} />
       <ProjectsSection />
+      <SideProjectsSection />
       <ExperienceSection />
       <ContactSection />
     </main>

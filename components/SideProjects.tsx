@@ -11,46 +11,32 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 import { BsGithub } from "react-icons/bs";
 
-export default function ProjectsSection() {
+export default function SideProjectsSection() {
   const projects = [
     {
-      title: "URL & Text Summarization API",
+      title: "E-Commerce Microservices Architecture(Incomplete)",
       description:
-        "A high-throughput, multi-tier API built to intelligently scrape, process, and summarize web content and raw text.",
-      tags: ["Node.js", "LangChain", "Cerebras LLaMA", "TypeScript", "Express"],
+        "A distributed, event-driven e-commerce backend architecture built with decoupled microservices, automated event messaging, and containerized deployments.",
+      tags: ["Go", "Node.js", "Docker", "RabbitMQ", "PostgreSQL", "Redis"],
       details: [
-        "Implemented strict multi-tier rate limiting to optimize API cost management and prevent service abuse.",
-        "Engineered resilient web scraping fallbacks to seamlessly handle dynamic, JavaScript-heavy web pages.",
-        "Optimized processing pipelines for low-latency delivery of tokenized summary payloads.",
+        "Architected decoupled microservices handling product catalog, order processing, and authentication using event-driven communication.",
+        "Implemented asynchronous event publishing and consumption via RabbitMQ to ensure reliable cross-service data consistency.",
+        "Containerized microservices with Docker Compose, configuring dynamic API gateway routing, service discovery, and centralized environment management.",
       ],
-      github: "https://github.com/Akene-Uzezi/summ-it-up-backend",
+      github: "https://github.com/Akene-Uzezi/ecommerce-microservices",
       live: "#",
     },
     {
-      title: "Enterprise Document Management System",
+      title: "Sprout — CLI Project Scaffolder(Incomplete)",
       description:
-        "A secure, scalable document management system designed for cross-departmental collaboration and protected asset distribution.",
-      tags: ["Node.js", "Express", "MongoDB", "RBAC", "Docker"],
+        "A fast, lightweight command-line tool written in Go to automate directory structure generation and boilerplate template initialization.",
+      tags: ["Go", "CLI", "Automation", "Developer Tools"],
       details: [
-        "Engineered granular Role-Based Access Control (RBAC) to dynamically enforce secure data access boundaries.",
-        "Implemented high-performance, encrypted file-sharing functionalities across the platform.",
-        "Collaborated in a team environment to deliver comprehensive API documentation and system modules.",
+        "Engineered an efficient CLI scaffolding utility in Go to instantiate standardized multi-tier project structures dynamically.",
+        "Designed an extensible template parser allowing seamless customization of boilerplate configurations through local file manifests.",
+        "Optimized for zero external runtime dependencies, ensuring high-speed execution and cross-platform compatibility.",
       ],
-      github: "https://github.com/Akene-Uzezi/Document-Repository-React",
-      live: "#",
-    },
-    {
-      title: "Incident Tracker and Death Reporting Software",
-      description:
-        "A high-throughput backend service designed for real-time incident logging, death reporting, and fast, flexible global search across healthcare records.",
-      tags: ["Gin (Golang)", "PostgreSQL", "pg_trgm", "REST API", "Docker"],
-      details: [
-        "Architected high-performance RESTful APIs using Gin (Golang) to handle real-time incident logging and mortality record management.",
-        "Engineered global search functionality using PostgreSQL trigram indexes (pg_trgm) for fast fuzzy matching and text querying across logs.",
-        "Designed and optimized relational schemas with ACID-compliant transactions for secure, audit-ready data retention.",
-        "Implemented role-scoped authorization and robust input validation to safeguard sensitive healthcare records.",
-      ],
-      github: "https://github.com/Akene-Uzezi/incident-tracker",
+      github: "https://github.com/Akene-Uzezi/sprout",
       live: "#",
     },
   ];
