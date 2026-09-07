@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
@@ -47,6 +47,24 @@ const CollaborateButton = ({ className }: { className?: string }) => (
       </span>
       <span className="absolute right-1 w-8 h-8 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-36px)] group-hover:rotate-45">
         <ArrowUpRight size={16} />
+      </span>
+    </Button>
+  </a>
+);
+
+const DownloadResumeButton = ({ className }: { className?: string }) => (
+  <a href="/Akene_Uzezi_Resume.pdf" download>
+    <Button
+      variant="outline"
+      className={cn(
+        "relative text-sm font-medium rounded-full h-10 px-4 gap-2 transition-all duration-300",
+        className,
+        "cursor-pointer border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground",
+      )}
+    >
+      <Download size={16} />
+      <span className="relative z-10 transition-all duration-500">
+        Resume
       </span>
     </Button>
   </a>
@@ -142,6 +160,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
         <div className="flex gap-3">
           <CollaborateButton className="hidden lg:flex" />
+          <DownloadResumeButton className="hidden lg:flex" />
           <div className="hidden lg:flex items-center">
             <ThemeToggle />
           </div>
@@ -217,6 +236,9 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
                     <div className="w-fit">
                       <CollaborateButton />
+                    </div>
+                    <div className="w-fit">
+                      <DownloadResumeButton />
                     </div>
                     <div className="w-fit">
                       <ThemeToggle />
