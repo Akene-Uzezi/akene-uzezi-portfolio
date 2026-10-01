@@ -28,7 +28,7 @@ function HeroSection() {
       <div className="relative w-full pt-0 md:pt-20 pb-6 md:pb-10">
         <div className="container mx-auto relative z-10 px-4">
           <div className="flex flex-col lg:flex-row max-w-6xl mx-auto gap-10 lg:gap-16 items-center justify-between">
-            <ImageCard src="/Placeholder.png" alt="Akene Uzezi" />
+            <ImageCard src="/Akene_Uzezi.jpg" alt="Akene Uzezi" />
             <div className="relative flex flex-col text-center lg:text-left items-center lg:items-start sm:gap-6 gap-5 max-w-2xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
