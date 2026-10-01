@@ -14,7 +14,7 @@ import { BsGithub } from "react-icons/bs";
 export default function SideProjectsSection() {
   const projects = [
     {
-      title: "E-Commerce Microservices Architecture(Incomplete)",
+      title: "E-Commerce Microservices Architecture",
       description:
         "A distributed, event-driven e-commerce backend architecture built with decoupled microservices, automated event messaging, and containerized deployments.",
       tags: ["Go", "Node.js", "Docker", "RabbitMQ", "PostgreSQL", "Redis"],
@@ -27,14 +27,12 @@ export default function SideProjectsSection() {
       live: "#",
     },
     {
-      title: "Sprout — CLI Project Scaffolder(Incomplete)",
+      title: "Sprout — CLI Project Scaffolder",
       description:
         "A fast, lightweight command-line tool written in Go to automate directory structure generation and boilerplate template initialization.",
       tags: ["Go", "CLI", "Automation", "Developer Tools"],
       details: [
-        "Engineered an efficient CLI scaffolding utility in Go to instantiate standardized multi-tier project structures dynamically.",
-        "Designed an extensible template parser allowing seamless customization of boilerplate configurations through local file manifests.",
-        "Optimized for zero external runtime dependencies, ensuring high-speed execution and cross-platform compatibility.",
+        "Engineered an efficient CLI scaffolding utility in Go to instantiate standardized golang project structures dynamically.",
       ],
       github: "https://github.com/Akene-Uzezi/sprout",
       live: "#",
