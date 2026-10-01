@@ -19,7 +19,7 @@ export function ImageCard({ src, alt, className }: ImageCardProp) {
       className={cn("w-full lg:w-100 shrink-0", className)}
     >
       <Card className="max-w-87.5 overflow-hidden rounded-2xl border-border/80 shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div className="relative aspect-video w-full overflow-hidden">
+        <div className="relative aspect-square w-full overflow-hidden">
           <img
             src={src}
             alt={alt}
